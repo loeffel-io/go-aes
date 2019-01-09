@@ -1,4 +1,4 @@
-package go_aes
+package goaes
 
 import (
 	"crypto/aes"
@@ -15,6 +15,7 @@ func getGCM(block cipher.Block) (cipher.AEAD, error) {
 	return cipher.NewGCM(block)
 }
 
+// Encrypt encrypts []byte data
 func Encrypt(data []byte, key []byte) ([]byte, error) {
 	var (
 		block cipher.Block
@@ -39,6 +40,7 @@ func Encrypt(data []byte, key []byte) ([]byte, error) {
 	return gcm.Seal(nonce, nonce, data, nil), nil
 }
 
+// Decrypt decrypts []byte data
 func Decrypt(data []byte, key []byte) ([]byte, error) {
 	var (
 		block cipher.Block

@@ -1,4 +1,4 @@
-package go_aes
+package goaes
 
 import (
 	"errors"
