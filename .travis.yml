@@ -9,8 +9,6 @@ go:
   - "1.10.x"
   - "1.11.x"
 
-go_import_path: ./github.com/loeffel-io/go-aes
-
 before_script:
   - make install
   - go get -u github.com/alecthomas/gometalinter
