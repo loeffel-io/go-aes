@@ -1,0 +1,20 @@
+notifications:
+  email: false
+
+language: go
+
+go:
+  - "1.9.x"
+  - "1.10.x"
+  - "1.11.x"
+
+before_script:
+  - make install
+  - go get -u github.com/alecthomas/gometalinter
+  - gometalinter --install
+
+script:
+  - make test
+
+after_success:
+  # - bash <(curl -s https://codecov.io/bash) -t fef15939-4d70-4594-9732-fe3707c32b8f
