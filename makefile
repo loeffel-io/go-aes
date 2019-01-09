@@ -1,5 +1,5 @@
 install:
-	go get
+	go get -t -v -u ./...
 
 test-coverage:
 	go test -v -race -coverprofile=coverage.txt -covermode=atomic ./...
